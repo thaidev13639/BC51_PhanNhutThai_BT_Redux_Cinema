@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { choiceChair } from '../store/Actions/ChoiceChairs'
 
 export default class Position extends Component {
     
@@ -8,13 +9,7 @@ export default class Position extends Component {
             return <td key={element.soGhe}>
                 <input
                     type="checkbox" checked={element.daChon} className={`seats ${element.daDat ? "bg-danger" : ""}` } disabled={element.daDat}
-                    onChange={() => this.props.dispatch({
-                        type: "CHOICE_CHAIR",
-                        payload: {
-                            element,
-                            hang: data.hang,
-                        }
-                    })}
+                    onChange={() => this.props.dispatch(choiceChair(element,data.hang))}
                 />
             </td>
         })

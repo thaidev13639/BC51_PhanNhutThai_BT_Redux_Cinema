@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deleteChair } from '../store/Actions/deleteChair';
 
 class TablePayment extends Component {
 
@@ -11,13 +12,7 @@ class TablePayment extends Component {
                         <td>{chair.soGhe}</td>
                         <td>{chair.gia.toLocaleString()} vnđ</td>
                         <td
-                            onClick={() => this.props.dispatch({
-                                type: "DELETE_CHAIR",
-                                payload: {
-                                    chair,
-                                    hang: element.hang,
-                                },
-                            })}
+                            onClick={() => this.props.dispatch(deleteChair(chair,element.hang))}
                             className="delete">X</td>
                     </tr>
                 } else {

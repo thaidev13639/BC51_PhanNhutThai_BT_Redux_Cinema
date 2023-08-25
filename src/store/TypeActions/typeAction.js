@@ -1,0 +1,2 @@
+export const CHOICE_CHAIR = "CHOICE_CHAIR";
+export const DELETE_CHAIR = "DELETE_CHAIR";
