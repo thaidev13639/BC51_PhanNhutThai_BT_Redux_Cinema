@@ -73,8 +73,9 @@ export const movies = (state = DEFAULT_STATE, action) => {
             // filter ra những thằng đã chọn, set !daDat
             const data = [...state.listChairs]
             // console.log(data)
-
-            data.forEach((element) => {
+            const isAnswer = window.confirm("Are You Sure??")
+            if (isAnswer) {
+                data.forEach((element) => {
                 // console.log(element.danhSachGhe)
                 element.danhSachGhe.forEach((danhSach) => {
                     if (danhSach.daChon) {
@@ -93,6 +94,7 @@ export const movies = (state = DEFAULT_STATE, action) => {
             console.log(data)
             state.listChairs = [...data];
             state.listPayment = []
+            }
             break;
             // return { ...state }
 
